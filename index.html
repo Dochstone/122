@@ -320,6 +320,12 @@
             color: #eab308;
         }
         
+        .tip-danger {
+            background: rgba(239,68,68,0.1);
+            border: 1px solid rgba(239,68,68,0.3);
+            color: #ef4444;
+        }
+        
         .tip-info {
             background: rgba(59,130,246,0.1);
             border: 1px solid rgba(59,130,246,0.3);
@@ -373,155 +379,144 @@
     <div id="main-page" class="container">
         <header class="header">
             <h1>TG STONE</h1>
-            <p>Полный план запуска на 11 площадках. Выберите площадку для подробного мануала по регистрации, ценам и запуску.</p>
+            <p>Полный план запуска на 11 площадках. Выберите площадку для подробного мануала.</p>
         </header>
 
         <div class="platforms-grid">
             <!-- PRIMARY -->
-            <a href="#" class="platform-card" onclick="showPage('salegroups')">
+            <a href="#" class="platform-card" onclick="showPage('salegroups'); return false;">
                 <div class="platform-header">
                     <span class="platform-name">SaleGroups.ru</span>
                     <span class="platform-status status-primary">ТОП-1</span>
                 </div>
-                <div class="platform-desc">Самая быстрая площадка для старта. Первая продажа в день публикации. Низкая комиссия, высокий трафик.</div>
+                <div class="platform-desc">Самая быстрая площадка для старта. Первая продажа в день публикации.</div>
                 <div class="platform-stats">
                     <span class="platform-stat">💰 7-15%</span>
                     <span class="platform-stat">⚡️ 1 день</span>
-                    <span class="platform-stat">🎯 Высокая конверсия</span>
                 </div>
             </a>
 
-            <a href="#" class="platform-card" onclick="showPage('kwork')">
+            <a href="#" class="platform-card" onclick="showPage('kwork'); return false;">
                 <div class="platform-header">
                     <span class="platform-name">Kwork.ru</span>
                     <span class="platform-status status-primary">ТОП-2</span>
                 </div>
-                <div class="platform-desc">Профессиональная биржа фриланса. Высокий чек, серьёзные клиенты. Жёсткая модерация, но стабильный поток.</div>
+                <div class="platform-desc">Профессиональная биржа. Высокий чек, серьёзные клиенты.</div>
                 <div class="platform-stats">
                     <span class="platform-stat">💰 20%</span>
-                    <span class="platform-stat">⏱️ 3-7 дней модерация</span>
                     <span class="platform-stat">💎 Высокий чек</span>
                 </div>
             </a>
 
-            <!-- TESTED (djekxa) -->
-            <a href="#" class="platform-card" onclick="showPage('djekxa')">
+            <!-- TESTED -->
+            <a href="#" class="platform-card" onclick="showPage('djekxa'); return false;">
                 <div class="platform-header">
                     <span class="platform-name">Djekxa.ru</span>
                     <span class="platform-status status-tested">Проверено</span>
                 </div>
-                <div class="platform-desc">✅ Уже работал! Были продажи, более-менее стабильно. Юрлицо ZAGRAN LTD (UK). Готовые чаты/каналы.</div>
+                <div class="platform-desc">✅ Уже работал! Были продажи. ZAGRAN LTD (UK).</div>
                 <div class="platform-stats">
-                    <span class="platform-stat">💰 ?%</span>
                     <span class="platform-stat">✅ Опыт есть</span>
                     <span class="platform-stat">🇬🇧 UK юрлицо</span>
                 </div>
             </a>
 
             <!-- SECONDARY -->
-            <a href="#" class="platform-card" onclick="showPage('tradegroups')">
+            <a href="#" class="platform-card" onclick="showPage('tradegroups'); return false;">
                 <div class="platform-header">
                     <span class="platform-name">Trade-Groups.ru</span>
                     <span class="platform-status status-secondary">B2B</span>
                 </div>
-                <div class="platform-desc">Бизнес-аудитория, агентства, оптовики. Трёхуровневая верификация, API-статистика.</div>
+                <div class="platform-desc">Бизнес-аудитория, агентства, оптовики.</div>
                 <div class="platform-stats">
                     <span class="platform-stat">💰 5-10%</span>
-                    <span class="platform-stat">🏢 B2B фокус</span>
-                    <span class="platform-stat">🔒 Верификация</span>
+                    <span class="platform-stat">🏢 B2B</span>
                 </div>
             </a>
 
-            <a href="#" class="platform-card" onclick="showPage('sesale')">
+            <a href="#" class="platform-card" onclick="showPage('sesale'); return false;">
                 <div class="platform-header">
                     <span class="platform-name">SESale.me</span>
                     <span class="platform-status status-secondary">Гарант</span>
                 </div>
-                <div class="platform-desc">Эскроу-сделки, телефонная поддержка. Максимальная безопасность для крупных сделок.</div>
+                <div class="platform-desc">Эскроу-сделки, телефонная поддержка.</div>
                 <div class="platform-stats">
-                    <span class="platform-stat">💰 7-15%</span>
                     <span class="platform-stat">🛡 Эскроу</span>
                     <span class="platform-stat">📞 Поддержка</span>
                 </div>
             </a>
 
-            <a href="#" class="platform-card" onclick="showPage('telderi')">
+            <a href="#" class="platform-card" onclick="showPage('telderi'); return false;">
                 <div class="platform-header">
                     <span class="platform-name">Telderi.ru</span>
                     <span class="platform-status status-secondary">Лидер</span>
                 </div>
-                <div class="platform-desc">Старейшая биржа (с 2011). Только готовые каналы с аудиторией. Требует подготовки активов.</div>
+                <div class="platform-desc">Старейшая биржа (с 2011). Только готовые каналы.</div>
                 <div class="platform-stats">
-                    <span class="platform-stat">💰 10-15%</span>
                     <span class="platform-stat">📊 135K+ сделок</span>
                     <span class="platform-stat">⚠️ Нужны каналы</span>
                 </div>
             </a>
 
             <!-- OPTIONAL -->
-            <a href="#" class="platform-card" onclick="showPage('madbid')">
+            <a href="#" class="platform-card" onclick="showPage('madbid'); return false;">
                 <div class="platform-header">
                     <span class="platform-name">MadBid.com</span>
                     <span class="platform-status status-optional">API</span>
                 </div>
-                <div class="platform-desc">Автоматизация, API-интеграция, антифрод. Для технологичных клиентов и агентств.</div>
+                <div class="platform-desc">Автоматизация, API-интеграция.</div>
                 <div class="platform-stats">
-                    <span class="platform-stat">💰 12%</span>
-                    <span class="platform-stat">🤖 Автоматизация</span>
+                    <span class="platform-stat">🤖 Авто</span>
                     <span class="platform-stat">🔧 API</span>
                 </div>
             </a>
 
-            <a href="#" class="platform-card" onclick="showPage('oldchat')">
+            <a href="#" class="platform-card" onclick="showPage('oldchat'); return false;">
                 <div class="platform-header">
                     <span class="platform-name">OldChat.org</span>
                     <span class="platform-status status-optional">Скупка</span>
                 </div>
-                <div class="platform-desc">Специфика: скупка и продажа старых чатов (до марта 2024). Высокие цены на винтаж.</div>
+                <div class="platform-desc">Скупка и продажа старых чатов (до марта 2024).</div>
                 <div class="platform-stats">
-                    <span class="platform-stat">💰 Договорная</span>
                     <span class="platform-stat">🏆 Винтаж</span>
-                    <span class="platform-stat">⚡️ Моментально</span>
+                    <span class="platform-stat">⚡️ Момент</span>
                 </div>
             </a>
 
-            <a href="#" class="platform-card" onclick="showPage('mipped')">
+            <a href="#" class="platform-card" onclick="showPage('mipped'); return false;">
                 <div class="platform-header">
                     <span class="platform-name">Mipped.com</span>
                     <span class="platform-status status-optional">Форум</span>
                 </div>
-                <div class="platform-desc">Форум/барахолка. Нет гаранта, но можно найти клиентов через активность. Требует времени.</div>
+                <div class="platform-desc">Форум/барахолка. Нет гаранта, но можно найти клиентов.</div>
                 <div class="platform-stats">
                     <span class="platform-stat">💰 Нет</span>
-                    <span class="platform-stat">⏱️ Ручной труд</span>
                     <span class="platform-stat">⚠️ Риск</span>
                 </div>
             </a>
 
             <!-- RISK -->
-            <a href="#" class="platform-card" onclick="showPage('darkshopping')">
+            <a href="#" class="platform-card" onclick="showPage('darkshopping'); return false;">
                 <div class="platform-header">
                     <span class="platform-name">Dark.Shopping</span>
                     <span class="platform-status status-risk">Тёмная</span>
                 </div>
-                <div class="platform-desc">Анонимная площадка. Низкие цены, но риск скама. Только для опытных, небольшие тесты.</div>
+                <div class="platform-desc">Анонимная площадка. Низкие цены, риск скама.</div>
                 <div class="platform-stats">
-                    <span class="platform-stat">💰 5-10%</span>
-                    <span class="platform-stat">🥷 Анонимно</span>
+                    <span class="platform-stat">🥷 Аноним</span>
                     <span class="platform-stat">⚠️ Риск</span>
                 </div>
             </a>
 
-            <a href="#" class="platform-card" onclick="showPage('funpay')">
+            <a href="#" class="platform-card" onclick="showPage('funpay'); return false;">
                 <div class="platform-header">
                     <span class="platform-name">FunPay.com</span>
                     <span class="platform-status status-risk">Опасно</span>
                 </div>
-                <div class="platform-desc">❌ ЗАПРЕЩАЕТ размещение на других площадках! Выбор: только FunPay или отказ.</div>
+                <div class="platform-desc">❌ ЗАПРЕЩАЕТ мультилистинг! Только FunPay или отказ.</div>
                 <div class="platform-stats">
-                    <span class="platform-stat">💰 3-15%</span>
-                    <span class="platform-stat">🚫 Мультилистинг</span>
-                    <span class="platform-stat">❌ Не рекомендуется</span>
+                    <span class="platform-stat">🚫 Мульти</span>
+                    <span class="platform-stat">❌ Нет</span>
                 </div>
             </a>
         </div>
@@ -534,7 +529,7 @@
 
     <!-- ==================== SALEGROUPS.RU ==================== -->
     <div id="salegroups" class="detail-page container">
-        <a href="#" class="back-btn" onclick="showPage('main')">← Назад к списку</a>
+        <a href="#" class="back-btn" onclick="showPage('main'); return false;">← Назад к списку</a>
         
         <div class="header">
             <h1>SaleGroups.ru</h1>
@@ -549,7 +544,6 @@
                 <tr><td><strong>Верификация</strong></td><td>Простая (Telegram)</td></tr>
                 <tr><td><strong>Сроки вывода</strong></td><td>1-3 дня</td></tr>
                 <tr><td><strong>Аудитория</strong></td><td>SMM-щики, арбитражники, бизнес</td></tr>
-                <tr><td><strong>Формат</strong></td><td>Объявления как на Авито</td></tr>
             </table>
         </div>
 
@@ -566,22 +560,21 @@
                 </li>
                 <li>
                     <div class="step-title">Публикация 3 объявлений</div>
-                    <div class="step-desc">Вывод в топ, Готовые чаты, Комплексное продвижение (тексты ниже)</div>
+                    <div class="step-desc">Вывод в топ, Готовые чаты, Комплексное продвижение</div>
                 </li>
                 <li>
                     <div class="step-title">Активация</div>
-                    <div class="step-desc">Поднятие объявлений каждые 24 часа (бесплатно или за небольшую плату)</div>
+                    <div class="step-desc">Поднятие объявлений каждые 24 часа</div>
                 </li>
                 <li>
                     <div class="step-title">Первые продажи</div>
-                    <div class="step-desc">Отвечать на сообщения в течение 5-15 минут для высокой конверсии</div>
+                    <div class="step-desc">Отвечать на сообщения в течение 5-15 минут</div>
                 </li>
             </ol>
         </div>
 
         <div class="content-section">
-            <h3>📝 Готовые тексты объявлений</h3>
-            
+            <h3>📝 Готовые тексты</h3>
             <h4>Объявление 1: Вывод в топ</h4>
             <div class="code-block">🚀 ВЫВОД БОТОВ В ТОП TELEGRAM
 
@@ -602,82 +595,83 @@
 Автовыдача через бота
 
 📩 @tgstonebot | 💬 @tgstone_support</div>
+        </div>
+    </div>
 
-            <h4>Объявление 2: Готовые чаты</h4>
-            <div class="code-block">💬 ГОТОВЫЕ ЧАТЫ С ОТЛЁЖКОЙ 2020-2024
-
-Живые аккаунты для инвайтинга и работы
-
-Цены за штуку:
-• 2020 год — $16 (макс. траст)
-• 2021 год — $14
-• 2022 год — $12
-• 2023 год — $10
-• 2024 год — $8
-
-✅ Супергруппы, полные права
-✅ Передача за 15 минут
-✅ Скидка 17% от 5 шт
-
-Минимальный заказ: 1 шт
-
-📩 @tgstonebot | 💬 @tgstone_support</div>
-
-            <h4>Объявление 3: Комплекс</h4>
-            <div class="code-block">📦 КОМПЛЕКСНОЕ ПРОДВИЖЕНИЕ TELEGRAM
-
-Всё в одном месте:
-
-🚀 Вывод в топ — от $12
-💬 Чаты с отлёжкой — от $8
-👥 Инвайтинг — $50-70/1000 чел
-⭐ Звёзды Telegram — от $1.25
-🤖 Разработка ботов — от $100
-
-⚡️ Сроки от 3 часов
-🛡 Гарантия результата
-💰 Рефералка 10%
-
-Работаем через гаранта площадки
-
-📩 @tgstonebot | 💬 @tgstone_support</div>
+    <!-- ==================== KWORK.RU ==================== -->
+    <div id="kwork" class="detail-page container">
+        <a href="#" class="back-btn" onclick="showPage('main'); return false;">← Назад к списку</a>
+        
+        <div class="header">
+            <h1>Kwork.ru</h1>
+            <p>Профессиональная биржа фриланса. Высокий чек, серьёзные клиенты.</p>
         </div>
 
         <div class="content-section">
-            <h3>💡 Советы по работе</h3>
-            <div class="tip tip-success">
-                <strong>💰 Лайфхак:</strong> Поднимайте объявления утром (9-11 МСК) — пик активности целевой аудитории.
-            </div>
-            <div class="tip tip-warning">
-                <strong>⚠️ Важно:</strong> Отвечайте быстро! Конкуренция высокая, клиент уйдёт к другому через 30 минут ожидания.
-            </div>
-            <div class="tip tip-info">
-                <strong>📈 Масштаб:</strong> После 5 продаж запросите отзывы — это поднимет доверие и конверсию.
-            </div>
+            <h3>📊 Информация</h3>
+            <table>
+                <tr><td><strong>Комиссия</strong></td><td>20%</td></tr>
+                <tr><td><strong>Минимальная цена</strong></td><td>500₽ (~$5.5)</td></tr>
+                <tr><td><strong>Модерация</strong></td><td>Жёсткая (1-3 дня)</td></tr>
+                <tr><td><strong>Вывод</strong></td><td>3-7 дней</td></tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h3>🚀 План запуска</h3>
+            <ol class="step-list">
+                <li><div class="step-title">Регистрация</div><div class="step-desc">Email + телефон, заполнить профиль</div></li>
+                <li><div class="step-title">Создание кворка</div><div class="step-desc">Начать с "Вывода в топ" — 1500₽ базовый</div></li>
+                <li><div class="step-title">Модерация</div><div class="step-desc">1-3 дня ожидания, исправить если отклонят</div></li>
+                <li><div class="step-title">Добавление кворков</div><div class="step-desc">"Разработка ботов" и "Инвайтинг"</div></li>
+                <li><div class="step-title">Работа с заказами</div><div class="step-desc">Первые 10 заказов критичны для репутации!</div></li>
+            </ol>
+        </div>
+
+        <div class="content-section">
+            <h3>📝 Кворк: Вывод в топ</h3>
+            <div class="code-block">🚀 Выведу бота в топ поиска Telegram
+
+Что входит:
+• Анализ ниши и конкурентов
+• Вывод в топ-3 по ключевым словам
+• 1000-100 000 поисковых запросов
+
+Тарифы:
+• Базовый — 1500₽ (1000 запросов)
+• Стандарт — 5500₽ (5000 запросов)
+• Премиум — 11000₽ (10000 запросов)
+
+Срок: 2-7 дней
+Гарантия: Возврат если не в топе
+
+Нужно: Ссылка на бота и ключевые слова</div>
+        </div>
+
+        <div class="tip tip-warning">
+            <strong>⚠️ Важно:</strong> На Kwork нельзя указывать внешние контакты в описании! Только в личных сообщениях после начала заказа.
         </div>
     </div>
 
     <!-- ==================== DJEKXA.RU ==================== -->
     <div id="djekxa" class="detail-page container">
-        <a href="#" class="back-btn" onclick="showPage('main')">← Назад к списку</a>
+        <a href="#" class="back-btn" onclick="showPage('main'); return false;">← Назад к списку</a>
         
         <div class="header">
             <h1>Djekxa.ru</h1>
-            <p>✅ ПРОВЕРЕНО! Уже работал, были продажи. ZAGRAN LTD (UK). Готовые чаты/каналы.</p>
+            <p>✅ ПРОВЕРЕНО! Уже работал, были продажи. ZAGRAN LTD (UK).</p>
         </div>
 
-        <div class="tip tip-success" style="margin-bottom: 24px;">
+        <div class="tip tip-success">
             <strong>✅ Ваш опыт:</strong> Уже был магазин, продажи были более-менее стабильные. Можно восстановить или создать новый.
         </div>
 
         <div class="content-section">
-            <h3>📊 Информация о площадке</h3>
+            <h3>📊 Информация</h3>
             <table>
-                <tr><td><strong>Юридическое лицо</strong></td><td>ZAGRAN LTD, Company number 16334360</td></tr>
+                <tr><td><strong>Юрлицо</strong></td><td>ZAGRAN LTD, UK 16334360</td></tr>
                 <tr><td><strong>Адрес</strong></td><td>82a James Carter Road, Mildenhall, UK</td></tr>
-                <tr><td><strong>Специализация</strong></td><td>Готовые чаты/каналы Telegram</td></tr>
-                <tr><td><strong>Комиссия</strong></td><td>Не указана (уточнить)</td></tr>
-                <tr><td><strong>Верификация</strong></td><td>Средняя (email, телефон)</td></tr>
+                <tr><td><strong>Специализация</strong></td><td>Готовые чаты/каналы</td></tr>
                 <tr><td><strong>Статус</strong></td><td>✅ Проверено, были продажи</td></tr>
             </table>
         </div>
@@ -685,26 +679,11 @@
         <div class="content-section">
             <h3>🚀 План запуска</h3>
             <ol class="step-list">
-                <li>
-                    <div class="step-title">Восстановление доступа</div>
-                    <div class="step-desc">Попробовать войти в старый аккаунт. Если не получится — зарегистрировать новый с тем же брендом TG STONE</div>
-                </li>
-                <li>
-                    <div class="step-title">Обновление каталога</div>
-                    <div class="step-desc">Актуализировать цены, добавить новые позиции (звёзды, вывод в топ, боты)</div>
-                </li>
-                <li>
-                    <div class="step-title">Публикация товаров</div>
-                    <div class="step-desc">Загрузить чаты/каналы с описанием, фото, ценами</div>
-                </li>
-                <li>
-                    <div class="step-title">Настройка автовыдачи</div>
-                    <div class="step-desc">Если есть API — интегрировать с @tgstonebot</div>
-                </li>
-                <li>
-                    <div class="step-title">Активация продаж</div>
-                    <div class="step-desc">Мониторить заказы, отвечать на вопросы, накапливать репутацию</div>
-                </li>
+                <li><div class="step-title">Восстановление доступа</div><div class="step-desc">Попробовать войти в старый аккаунт или создать новый</div></li>
+                <li><div class="step-title">Обновление каталога</div><div class="step-desc">Актуализировать цены, добавить новые позиции</div></li>
+                <li><div class="step-title">Публикация товаров</div><div class="step-desc">Загрузить чаты/каналы с описанием и ценами</div></li>
+                <li><div class="step-title">Настройка автовыдачи</div><div class="step-desc">Интегрировать с @tgstonebot если есть API</div></li>
+                <li><div class="step-title">Активация продаж</div><div class="step-desc">Мониторить заказы, отвечать на вопросы</div></li>
             </ol>
         </div>
 
@@ -726,86 +705,338 @@
 • 2023 год — $4
 • 2024 год — $3
 
-🚀 ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ:
+🚀 ДОПОЛНИТЕЛЬНО:
 • Вывод в топ поиска — от $12
-• Инвайтинг живой аудитории — $50-70/1000
-• Telegram Звёзды — от $1.25
-• Разработка ботов — от $100
+• Инвайтинг — $50-70/1000
+• Звёзды — от $1.25
+• Боты — от $100
 
 ✅ Полная передача прав
 ✅ Гарантия качества
-✅ Оплата: USDT, CryptoBot
 
 Юрлицо: ZAGRAN LTD (UK)
-Регистрация: 16334360
-
 📩 @tgstonebot | 💬 @tgstone_support</div>
+        </div>
+    </div>
+
+    <!-- ==================== TRADE-GROUPS.RU ==================== -->
+    <div id="tradegroups" class="detail-page container">
+        <a href="#" class="back-btn" onclick="showPage('main'); return false;">← Назад к списку</a>
+        
+        <div class="header">
+            <h1>Trade-Groups.ru</h1>
+            <p>B2B-аудитория, агентства, оптовики. Трёхуровневая верификация.</p>
         </div>
 
         <div class="content-section">
-            <h3>💡 Преимущества площадки</h3>
-            <ul>
-                <li>✅ Уже знакомая система (был опыт)</li>
-                <li>✅ UK юридическое лицо — доверие европейских клиентов</li>
-                <li>✅ Специализация на Telegram — целевая аудитория</li>
-                <li>✅ Меньше конкуренции чем на крупных биржах</li>
-            </ul>
+            <h3>📊 Информация</h3>
+            <table>
+                <tr><td><strong>Комиссия</strong></td><td>5-10%</td></tr>
+                <tr><td><strong>Аудитория</strong></td><td>Бизнес, маркетинговые агентства</td></tr>
+                <tr><td><strong>Верификация</strong></td><td>Трёхуровневая</td></tr>
+                <tr><td><strong>Особенности</strong></td><td>API-статистика, чёрный список</td></tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h3>🚀 План запуска</h3>
+            <ol class="step-list">
+                <li><div class="step-title">Регистрация</div><div class="step-desc">Через @tradegroupsbot, нажать "Регистрация продавца"</div></li>
+                <li><div class="step-title">Верификация</div><div class="step-desc">Три уровня проверки, подтвердить аккаунт</div></li>
+                <li><div class="step-title">Заполнение профиля компании</div><div class="step-desc">TG STONE, описание услуг, контакты</div></li>
+                <li><div class="step-title">Подача заявки</div><div class="step-desc">Дождаться одобрения модераторов</div></li>
+                <li><div class="step-title">Публикация предложений</div><div class="step-desc">B2B-формат, акцент на объёмы и партнёрство</div></li>
+            </ol>
+        </div>
+
+        <div class="content-section">
+            <h3>📝 B2B-объявление</h3>
+            <div class="code-block">💼 B2B-ПРОДВИЖЕНИЕ TELEGRAM ДЛЯ БИЗНЕСА
+
+Для маркетинговых агентств и владельцев бизнеса:
+
+🎯 ИНВАЙТИНГ ЦЕЛЕВОЙ АУДИТОРИИ
+• Парсинг конкурентов включён
+• $50-70 за 1000 живых участников
+• Гарантия вовлечённости 7 дней
+
+🚀 ВЫВОД КОРПОРАТИВНЫХ БОТОВ В ТОП
+• От 1K до 100K целевых запросов
+• Топ-3 выдачи по ключевым словам
+
+📦 ГОТОВЫЕ ЧАТЫ ДЛЯ БИЗНЕСА
+• 2020-2024 года регистрации
+• От $8 за штуку
+
+✅ Работа через гаранта площадки
+✅ API-статистика для агентств
+✅ Верификация владельца
+
+@tgstone_support | @tgstonebot</div>
+        </div>
+    </div>
+
+    <!-- ==================== SESALE.ME ==================== -->
+    <div id="sesale" class="detail-page container">
+        <a href="#" class="back-btn" onclick="showPage('main'); return false;">← Назад к списку</a>
+        
+        <div class="header">
+            <h1>SESale.me</h1>
+            <p>Эскроу-сделки, телефонная поддержка. Максимальная безопасность.</p>
+        </div>
+
+        <div class="content-section">
+            <h3>📊 Информация</h3>
+            <table>
+                <tr><td><strong>Комиссия</strong></td><td>7-15%</td></tr>
+                <tr><td><strong>Гарант</strong></td><td>Эскроу площадки</td></tr>
+                <tr><td><strong>Поддержка</strong></td><td>Телефон + чат</td></tr>
+                <tr><td><strong>Верификация</strong></td><td>Паспорт</td></tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h3>🚀 План запуска</h3>
+            <ol class="step-list">
+                <li><div class="step-title">Регистрация</div><div class="step-desc">Email, телефон, паспортная верификация</div></li>
+                <li><div class="step-title">Проверка аккаунта</div><div class="step-desc">Модерация 1-2 дня</div></li>
+                <li><div class="step-title">Создание магазина</div><div class="step-desc">TG STONE, описание, логотип</div></li>
+                <li><div class="step-title">Добавление товаров</div><div class="step-desc">Чаты, каналы, услуги с ценами</div></li>
+                <li><div class="step-title">Работа с эскроу</div><div class="step-desc">Деньги замораживаются до подтверждения</div></li>
+            </ol>
+        </div>
+
+        <div class="content-section">
+            <h3>📝 Объявление с гарантом</h3>
+            <div class="code-block">🛡 ГАРАНТИРОВАННЫЕ СДЕЛКИ В TELEGRAM
+
+Работаем через эскроу SESale:
+
+📦 ГОТОВЫЕ АКТИВЫ
+• Чаты с отлёжкой 2020-2024 — от $8
+• Каналы с историей — от $3
+• Передача прав через Telegram API
+
+🚀 УСЛУГИ С ГАРАНТИЕЙ
+• Вывод в топ — от $12
+• Инвайтинг — $50-70/1000
+• Звёзды — от $1.25
+
+Безопасность:
+✅ Проверка активов перед передачей
+✅ Эскроу до подтверждения
+✅ Возврат 100% при невыполнении
+✅ Телефонная поддержка
+
+Верифицированный продавец ⭐⭐⭐⭐⭐
+
+@tgstone_support | @tgstonebot</div>
+        </div>
+    </div>
+
+    <!-- ==================== TELDERI.RU ==================== -->
+    <div id="telderi" class="detail-page container">
+        <a href="#" class="back-btn" onclick="showPage('main'); return false;">← Назад к списку</a>
+        
+        <div class="header">
+            <h1>Telderi.ru</h1>
+            <p>Старейшая биржа (с 2011). Только готовые каналы с аудиторией.</p>
+        </div>
+
+        <div class="content-section">
+            <h3>📊 Информация</h3>
+            <table>
+                <tr><td><strong>Комиссия</strong></td><td>10-15%</td></tr>
+                <tr><td><strong>Опыт</strong></td><td>135 000+ сделок с 2011</td></tr>
+                <tr><td><strong>Требование</strong></td><td>Каналы с 1000+ подписчиков</td></tr>
+                <tr><td><strong>Верификация</strong></td><td>Паспорт</td></tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h3>🚀 План запуска (подготовка 2-4 недели)</h3>
+            <ol class="step-list">
+                <li><div class="step-title">Создание каналов</div><div class="step-desc">Нужно 3-5 каналов разных лет с 1000+ подписчиками</div></li>
+                <li><div class="step-title">Наполнение контентом</div><div class="step-desc">Посты, история, активность</div></li>
+                <li><div class="step-title">Регистрация на Telderi</div><div class="step-desc">Паспортная верификация</div></li>
+                <li><div class="step-title">Создание лотов</div><div class="step-desc">Описание, скриншоты статистики, цены</div></li>
+                <li><div class="step-title">Аукцион или фикс</div><div class="step-desc">Выбор формата продажи</div></li>
+            </ol>
+        </div>
+
+        <div class="tip tip-warning">
+            <strong>⚠️ Требует подготовки:</strong> Нужны реальные каналы с аудиторией. Без этого не разместиться.
+        </div>
+
+        <div class="content-section">
+            <h3>📝 Заготовка для лота</h3>
+            <div class="code-block">📢 ПРОДАЖА ГОТОВЫХ TELEGRAM-КАНАЛОВ
+
+В продаже каналы с историей и аудиторией:
+
+• Канал 2022 г., 1500 подписчиков — $45
+• Канал 2023 г., 1200 подписчиков — $35
+• Канал 2024 г., 1000 подписчиков — $25
+
+Характеристики:
+✅ Чистая история, без банов
+✅ Живые подписчики
+✅ Ежедневный постинг
+✅ Полная передача прав
+
+Также чаты-супергруппы 2020-2024 гг.
+
+Сделка через гарант Telderi
+Безопасность для покупателя и продавца
+
+@tgstone_support</div>
+        </div>
+    </div>
+
+    <!-- ==================== MADBID.COM ==================== -->
+    <div id="madbid" class="detail-page container">
+        <a href="#" class="back-btn" onclick="showPage('main'); return false;">← Назад к списку</a>
+        
+        <div class="header">
+            <h1>MadBid.com</h1>
+            <p>Автоматизация, API-интеграция, антифрод. Для технологичных клиентов.</p>
+        </div>
+
+        <div class="content-section">
+            <h3>📊 Информация</h3>
+            <table>
+                <tr><td><strong>Комиссия</strong></td><td>12%</td></tr>
+                <tr><td><strong>Особенности</strong></td><td>API, автоматизация</td></tr>
+                <tr><td><strong>Аудитория</strong></td><td>Технари, агентства, автоматизаторы</td></tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h3>🚀 План запуска</h3>
+            <ol class="step-list">
+                <li><div class="step-title">Регистрация</div><div class="step-desc">Заполнить профиль, верификация</div></li>
+                <li><div class="step-title">Изучение API</div><div class="step-desc">Документация интеграции</div></li>
+                <li><div class="step-title">Создание магазина</div><div class="step-desc">TG STONE, технологичное описание</div></li>
+                <li><div class="step-title">Настройка автовыдачи</div><div class="step-desc">Интеграция с @tgstonebot</div></li>
+                <li><div class="step-title">Тестирование</div><div class="step-desc">Проверить вебхуки, статусы</div></li>
+            </ol>
+        </div>
+
+        <div class="content-section">
+            <h3>📝 Технологичное объявление</h3>
+            <div class="code-block">🤖 АВТОМАТИЗИРОВАННОЕ ПРОДВИЖЕНИЕ TELEGRAM
+
+API-решения для агентств:
+
+⚡️ SMART-ВЫВОД В ТОП
+• Алгоритмическое поднятие в выдаче
+• 1K-100K целевых поисковых запросов
+• API-контроль выполнения
+
+🔧 АВТОВЫДАЧА ЧАТОВ
+• Чаты 2020-2024 — от $8
+• Передача прав через бота за 5 минут
+• Вебхуки на статус сделки
+
+📊 ИНТЕГРАЦИИ
+• CryptoBot для автоплатежей
+• Реферальная система 10% с API
+• Автоматическая отчётность
+
+Для подключения API:
+@tgstone_support | @tgstonebot</div>
+        </div>
+    </div>
+
+    <!-- ==================== OLDCHAT.ORG ==================== -->
+    <div id="oldchat" class="detail-page container">
+        <a href="#" class="back-btn" onclick="showPage('main'); return false;">← Назад к списку</a>
+        
+        <div class="header">
+            <h1>OldChat.org</h1>
+            <p>Специфика: скупка и продажа старых чатов (до марта 2024).</p>
+        </div>
+
+        <div class="content-section">
+            <h3>📊 Информация</h3>
+            <table>
+                <tr><td><strong>Комиссия</strong></td><td>Договорная</td></tr>
+                <tr><td><strong>Специализация</strong></td><td>Чаты до марта 2024</td></tr>
+                <tr><td><strong>Скорость</strong></td><td>Моментальная оценка и оплата</td></tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h3>🚀 План запуска</h3>
+            <ol class="step-list">
+                <li><div class="step-title">Регистрация</div><div class="step-desc">Простая, через сайт</div></li>
+                <li><div class="step-title">Публикация предложений</div><div class="step-desc">Продажа старых чатов</div></li>
+                <li><div class="step-title">Скупка чатов</div><div class="step-desc">Можно также продавать им свои</div></li>
+                <li><div class="step-title">Работа с клиентами</div><div class="step-desc">Быстрая передача прав</div></li>
+            </ol>
+        </div>
+
+        <div class="content-section">
+            <h3>📝 Объявление</h3>
+            <div class="code-block">🏆 СТАРЫЕ TELEGRAM-ЧАТЫ 2020-2024
+
+Продаём чаты с максимальным трастом Telegram:
+
+📅 ПО ГОДАМ:
+• 2020 год — $16 (максимальная репутация)
+• 2021 год — $14 (высокий траст)
+• 2022 год — $12 (оптимальный вариант)
+• 2023 год — $10 (хорошая отлёжка)
+• 2024 год — $8 (бюджетный старт)
+
+✅ Все чаты — супергруппы
+✅ Передача через @WhatIOwnBot
+✅ Готовы к инвайтингу сразу
+
+Также ВЫКУПАЕМ ваши старые чаты (до марта 2024) по высоким ценам!
+
+Оценка за 10 минут, моментальная оплата
+
+@tgstone_support | @tgstonebot</div>
         </div>
     </div>
 
     <!-- ==================== MIPPED.COM ==================== -->
     <div id="mipped" class="detail-page container">
-        <a href="#" class="back-btn" onclick="showPage('main')">← Назад к списку</a>
+        <a href="#" class="back-btn" onclick="showPage('main'); return false;">← Назад к списку</a>
         
         <div class="header">
             <h1>Mipped.com</h1>
-            <p>Форум/барахолка. Нет гаранта, но можно найти клиентов через активность.</p>
+            <p>Форум/барахолка. Нет гаранта, высокий риск, но можно найти клиентов.</p>
         </div>
 
-        <div class="tip tip-warning" style="margin-bottom: 24px;">
-            <strong>⚠️ Внимание:</strong> Это форум, не профессиональная биржа. Нет системы гаранта, высокий риск. Только для опытных.
+        <div class="tip tip-warning">
+            <strong>⚠️ Внимание:</strong> Это форум, не профессиональная биржа. Нет системы гаранта, высокий риск мошенничества.
         </div>
 
         <div class="content-section">
-            <h3>📊 Информация о площадке</h3>
+            <h3>📊 Информация</h3>
             <table>
                 <tr><td><strong>Тип</strong></td><td>Форум / Барахолка</td></tr>
-                <tr><td><strong>Раздел</strong></td><td>Аккаунты, софт, услуги</td></tr>
                 <tr><td><strong>Комиссия</strong></td><td>Нет</td></tr>
                 <tr><td><strong>Гарант</strong></td><td>❌ Нет</td></tr>
-                <tr><td><strong>Модерация</strong></td><td>Слабая</td></tr>
-                <tr><td><strong>Риск</strong></td><td>Высокий (много скама)</td></tr>
+                <tr><td><strong>Риск</strong></td><td>Высокий</td></tr>
             </table>
         </div>
 
         <div class="content-section">
             <h3>🚀 План запуска (неделя 3-4)</h3>
             <ol class="step-list">
-                <li>
-                    <div class="step-title">Регистрация</div>
-                    <div class="step-desc">Создать аккаунт, заполнить профиль, добавить контакты (@tgstone_support)</div>
-                </li>
-                <li>
-                    <div class="step-title">Изучение правил</div>
-                    <div class="step-desc">Прочитать правила раздела "Аккаунты и услуги", узнать ограничения</div>
-                </li>
-                <li>
-                    <div class="step-title">Создание темы</div>
-                    <div class="step-desc">Оформить ветку с предложениями, ценами, контактами (шаблон ниже)</div>
-                </li>
-                <li>
-                    <div class="step-title">Активность</div>
-                    <div class="step-desc">Поднимать тему (апать) каждые 24 часа, отвечать в соседних ветках</div>
-                </li>
-                <li>
-                    <div class="step-title">Работа с рисками</div>
-                    <div class="step-desc">Только предоплата 100% или работа через гаранта-перекупа. Не давать товар в долг!</div>
-                </li>
+                <li><div class="step-title">Регистрация</div><div class="step-desc">Создать аккаунт, заполнить профиль</div></li>
+                <li><div class="step-title">Изучение правил</div><div class="step-desc">Прочитать правила раздела "Аккаунты и услуги"</div></li>
+                <li><div class="step-title">Создание темы</div><div class="step-desc">Оформить ветку с предложениями</div></li>
+                <li><div class="step-title">Активность</div><div class="step-desc">Поднимать тему каждые 24 часа</div></li>
+                <li><div class="step-title">Безопасность</div><div class="step-desc">Только 100% предоплата или гарант с репутацией</div></li>
             </ol>
         </div>
 
         <div class="content-section">
-            <h3>📝 Шаблон темы на форуме</h3>
+            <h3>📝 Шаблон темы</h3>
             <div class="code-block">[PRO] TG STONE — Telegram продвижение | Вывод в топ | Чаты | Инвайтинг
 
 🔥 ОПЫТ 4+ ГОДА | 1000+ ВЫПОЛНЕННЫХ ЗАКАЗОВ
@@ -827,147 +1058,118 @@
 • Проверенные площадки (SaleGroups, Kwork, etc)
 • Регулярные отзывы
 • Техподдержка 24/7
-• Скидки постоянным
 
-❗️ РАБОТАЮ ТОЛЬКО ПО 100% ПРЕДОПЛАТЕ ИЛИ ЧЕРЕЗ ГАРАНТА
-
-Отзывы в профиле и на внешних биржах.</div>
+❗️ РАБОТАЮ ТОЛЬКО ПО 100% ПРЕДОПЛАТЕ ИЛИ ЧЕРЕЗ ГАРАНТА</div>
         </div>
 
-        <div class="content-section">
-            <h3>⚠️ Правила безопасности</h3>
-            <div class="tip tip-danger">
-                <strong>🚫 Никогда:</strong> Не работать в долг, не передавать товар до оплаты, не верить "проверенным" посредникам без проверки.
-            </div>
-            <div class="tip tip-success">
-                <strong>✅ Всегда:</strong> Предоплата 100%, или гарант с репутацией (проверить историю!), или работа через вашего бота @tgstonebot с балансом.
-            </div>
+        <div class="tip tip-danger">
+            <strong>🚫 Никогда:</strong> Не работать в долг, не передавать товар до оплаты, не верить "проверенным" посредникам без проверки!
         </div>
     </div>
 
-    <!-- ==================== KWORK.RU ==================== -->
-    <div id="kwork" class="detail-page container">
-        <a href="#" class="back-btn" onclick="showPage('main')">← Назад к списку</a>
+    <!-- ==================== DARK.SHOPPING ==================== -->
+    <div id="darkshopping" class="detail-page container">
+        <a href="#" class="back-btn" onclick="showPage('main'); return false;">← Назад к списку</a>
         
         <div class="header">
-            <h1>Kwork.ru</h1>
-            <p>Профессиональная биржа фриланса. Высокий чек, серьёзные клиенты, жёсткая модерация.</p>
+            <h1>Dark.Shopping</h1>
+            <p>Анонимная площадка. Низкие цены, но высокий риск скама.</p>
+        </div>
+
+        <div class="tip tip-danger">
+            <strong>⚠️ Высокий риск:</strong> Много негативных отзывов, фейковые аккаунты, риск недовыплат. Только для опытных, небольшие тесты.
         </div>
 
         <div class="content-section">
-            <h3>📊 Информация о площадке</h3>
+            <h3>📊 Информация</h3>
             <table>
-                <tr><td><strong>Комиссия</strong></td><td>20%</td></tr>
-                <tr><td><strong>Минимальная цена</strong></td><td>500₽ (~$5.5)</td></tr>
-                <tr><td><strong>Модерация</strong></td><td>Жёсткая (проверяет каждый кворк)</td></tr>
-                <tr><td><strong>Срок модерации</strong></td><td>1-3 дня</td></tr>
-                <tr><td><strong>Вывод средств</strong></td><td>3-7 дней</td></tr>
-                <tr><td><strong>Аудитория</strong></td><td>Бизнес, заказчики с бюджетом</td></tr>
+                <tr><td><strong>Комиссия</strong></td><td>5-10%</td></tr>
+                <tr><td><strong>Особенность</strong></td><td>Анонимность</td></tr>
+                <tr><td><strong>Риск</strong></td><td>Высокий</td></tr>
             </table>
         </div>
 
         <div class="content-section">
-            <h3>🚀 План запуска (День 4-7)</h3>
+            <h3>🚀 План запуска (только тест!)</h3>
             <ol class="step-list">
-                <li>
-                    <div class="step-title">Регистрация</div>
-                    <div class="step-desc">Email + телефон. Заполнить профиль: фото, описание, навыки "Telegram, SMM, боты"</div>
-                </li>
-                <li>
-                    <div class="step-title">Создание первого кворка</div>
-                    <div class="step-desc">Начать с "Вывода в топ" — самая понятная услуга. Цена: 1500₽ базовый</div>
-                </li>
-                <li>
-                    <div class="step-title">Ожидание модерации</div>
-                    <div class="step-desc">1-3 дня. Если отклонят — исправить замечания и отправить повторно</div>
-                </li>
-                <li>
-                    <div class="step-title">Добавление кворков</div>
-                    <div class="step-desc">После одобрения первого — добавить "Разработка ботов" и "Инвайтинг"</div>
-                </li>
-                <li>
-                    <div class="step-title">Работа с заказами</div>
-                    <div class="step-desc">Высокое качество = хорошие отзывы = больше заказов. Первые 10 заказов критичны!</div>
-                </li>
+                <li><div class="step-title">Регистрация</div><div class="step-desc">Минимальные данные</div></li>
+                <li><div class="step-title">Тестовый лот</div><div class="step-desc">Маленькая сумма ($10-20) для проверки</div></li>
+                <li><div class="step-title">Проверка вывода</div><div class="step-desc">Вывести сразу после первой продажи</div></li>
+                <li><div class="step-title">Решение</div><div class="step-desc">Если работает — продолжать, если нет — уйти</div></li>
             </ol>
         </div>
 
         <div class="content-section">
-            <h3>📝 Кворк 1: Вывод в топ</h3>
-            <div class="code-block">🚀 Выведу бота в топ поиска Telegram
+            <h3>📝 Короткое объявление</h3>
+            <div class="code-block">💀 TG STONE — ТОП ВЫДАЧИ, ЧАТЫ, ИНВАЙТ
 
-Что входит:
-• Анализ ниши и конкурентов
-• Вывод в топ-3 по ключевым словам
-• 1000-100 000 поисковых запросов
-• Органический трафик на 3-7 дней
+• Вывод ботов в топ: 1K-100K, $12-800
+• Чаты 2020-2024: $8-16/шт
+• Инвайтинг: $50-70/1000 живых
+• Звёзды: от $1.25
 
-Тарифы:
-• Базовый — 1500₽ (1000 запросов)
-• Стандарт — 5500₽ (5000 запросов)
-• Премиум — 11000₽ (10000 запросов)
+Без KYC. Без вопросов. Возврат если не топ.
 
-Срок: 2-7 дней
-Гарантия: Возврат если не в топе
-
-Нужно от вас:
-• Ссылка на бота
-• Ключевые слова (до 10 шт)
-
-Опыт: 500+ выполненных заказов</div>
-
-            <h4>Кворк 2: Разработка бота</h4>
-            <div class="code-block">🤖 Создам Telegram-бота под ключ
-
-Возможности:
-• Магазин с каталогом и корзиной
-• Интеграция оплаты (CryptoBot, USDT)
-• CRM и база клиентов
-• Автоматические рассылки
-• Админ-панель
-
-Тарифы:
-• Простой бот — 9000₽
-• Магазин — 18000₽
-• Сложный проект — от 36000₽
-
-Что входит:
-• Техническое задание
-• Разработка 3-14 дней
-• Тестирование
-• Инструкция по использованию
-
-Портфолио в профиле</div>
-
-            <h4>Кворк 3: Инвайтинг</h4>
-            <div class="code-block">👥 Наберу живую аудиторию в Telegram-канал
-
-Что делаю:
-• Парсинг целевых чатов вашей ниши
-• Инвайтинг реальных пользователей
-• Гео и тематика под ваш запрос
-
-Тарифы:
-• 1000 человек — 5500₽
-• 5000 человек — 25000₽
-• 10000 человек — 45000₽
-
-Гарантии:
-• Живые аккаунты (не боты)
-• Защита от отписок 7 дней
-• Доклад с источниками
-
-Нужен доступ к каналу или чату
-Срок: 1-3 дня</div>
-        </div>
-
-        <div class="tip tip-warning">
-            <strong>⚠️ Важно:</strong> На Kwork запрещено указывать внешние контакты в описании. Только в личных сообщениях после начала заказа!
+Оплата: USDT, CryptoBot
+Бот: @tgstonebot
+Поддержка: @tgstone_support</div>
         </div>
     </div>
 
-    <!-- ==================== OTHER PAGES TEMPLATE ==================== -->
-    <!-- Добавить аналогичные страницы для: tradegroups, sesale, telderi, madbid, oldchat, darkshopping, funpay -->
+    <!-- ==================== FUNPAY.COM ==================== -->
+    <div id="funpay" class="detail-page container">
+        <a href="#" class="back-btn" onclick="showPage('main'); return false;">← Назад к списку</a>
+        
+        <div class="header">
+            <h1>FunPay.com</h1>
+            <p>❌ НЕ РЕКОМЕНДУЕТСЯ — запрещает размещение на других площадках!</p>
+        </div>
+
+        <div class="tip tip-danger">
+            <strong>🚫 КРИТИЧНО:</strong> FunPay запрещает продавцам размещать объявления на других биржах. Если хотите работать здесь — придётся выбрать только FunPay или рисковать блокировкой.
+        </div>
+
+        <div class="content-section">
+            <h3>📊 Информация</h3>
+            <table>
+                <tr><td><strong>Комиссия</strong></td><td>3-15%</td></tr>
+                <tr><td><strong>Аудитория</strong></td><td>Геймеры, молодёжь</td></tr>
+                <tr><td><strong>Правило</strong></td><td>❌ Запрет мультилистинга</td></tr>
+                <tr><td><strong>Вердикт</strong></td><td>Не рекомендуется</td></tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h3>⚠️ Почему не стоит</h3>
+            <ul>
+                <li>Запрет на работу с другими площадками</li>
+                <li>Риск блокировки всех аккаунтов</li>
+                <li>Специализация на игровых аккаунтах, не Telegram</li>
+                <li>Жёсткая модерация на соответствие тематике</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>📝 Если всё же решитесь (только FunPay)</h3>
+            <div class="code-block">⭐ Telegram Звёзды | Вывод в топ | Чаты
+
+• Звёзды Telegram — от 50 шт ($1.25)
+• Вывод бота в топ — от $12
+• Готовые чаты 2020-2024 — от $8
+• Инвайтинг — $50-70/1000
+
+Автовыдача после оплаты
+Поддержка 24/7
+
+Бот: @tgstonebot
+
+⚠️ Работаю только на FunPay</div>
+        </div>
+
+        <div class="tip tip-warning">
+            <strong>💡 Рекомендация:</strong> Пропустить эту площадку. Ограничения не стоят возможной прибыли. Лучше сфокусироваться на 8 других площадках без таких ограничений.
+        </div>
+    </div>
 
     <script>
         function showPage(pageId) {
@@ -986,12 +1188,9 @@
                 if (page) {
                     page.classList.add('active');
                     window.scrollTo(0, 0);
-                } else {
-                    // Если страница еще не создана, показать заглушку
-                    alert('Страница для ' + pageId + ' в разработке. Используйте тексты из общего раздела.');
-                    document.getElementById('main-page').style.display = 'block';
                 }
             }
+            return false;
         }
 
         // Copy functionality
@@ -1002,6 +1201,14 @@
                 e.target.textContent = 'Скопировано!';
                 setTimeout(() => e.target.textContent = 'Копировать', 2000);
             }
+        });
+
+        // Add copy buttons to code blocks
+        document.querySelectorAll('.code-block').forEach(block => {
+            const btn = document.createElement('button');
+            btn.className = 'copy-btn';
+            btn.textContent = 'Копировать';
+            block.appendChild(btn);
         });
     </script>
 </body>
