@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TG STONE — Промо-материалы для маркетплейсов</title>
+    <title>TG STONE — План запуска на всех площадках</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
         
@@ -22,7 +22,6 @@
             background: #0a0a0f;
             color: #e5e7eb;
             line-height: 1.6;
-            padding-top: 20px;
         }
         
         .container {
@@ -53,147 +52,189 @@
         .header p {
             font-size: 18px;
             color: #9ca3af;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
         }
         
-        /* Navigation - НЕ фиксированная, обычная */
-        .nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-            margin-bottom: 40px;
-            padding: 16px;
-            background: rgba(255,255,255,0.03);
-            border-radius: 16px;
-            border: 1px solid rgba(255,255,255,0.1);
+        /* Platform Cards Grid */
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
         }
         
-        .nav a {
+        .platform-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .platform-card:hover {
+            border-color: rgba(102,126,234,0.5);
+            transform: translateY(-4px);
+            background: rgba(255,255,255,0.05);
+        }
+        
+        .platform-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 16px;
+        }
+        
+        .platform-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .platform-status {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .status-primary { background: rgba(34,197,94,0.2); color: #22c55e; }
+        .status-secondary { background: rgba(59,130,246,0.2); color: #60a5fa; }
+        .status-tested { background: rgba(168,85,247,0.2); color: #a855f7; }
+        .status-optional { background: rgba(234,179,8,0.2); color: #eab308; }
+        .status-risk { background: rgba(239,68,68,0.2); color: #ef4444; }
+        
+        .platform-desc {
+            color: #9ca3af;
+            font-size: 14px;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        
+        .platform-stats {
+            display: flex;
+            gap: 16px;
+            font-size: 13px;
+            color: #6b7280;
+        }
+        
+        .platform-stat {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        /* Detail Pages */
+        .detail-page {
+            display: none;
+            animation: fadeIn 0.3s;
+        }
+        
+        .detail-page.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             color: #9ca3af;
             text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 8px;
+            margin-bottom: 24px;
+            padding: 12px 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
             transition: all 0.3s;
-            font-weight: 500;
-            font-size: 14px;
         }
         
-        .nav a:hover {
+        .back-btn:hover {
             background: rgba(102,126,234,0.2);
             color: #667eea;
         }
         
-        /* Sections */
-        section {
-            margin-bottom: 60px;
-            scroll-margin-top: 20px;
+        /* Content Sections */
+        .content-section {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
         }
         
-        h2 {
-            font-size: 32px;
+        .content-section h3 {
+            font-size: 20px;
             font-weight: 700;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
             color: #fff;
             display: flex;
             align-items: center;
             gap: 12px;
         }
         
-        h2::before {
-            content: '';
-            width: 4px;
-            height: 32px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 2px;
-        }
-        
-        h3 {
-            font-size: 24px;
+        .content-section h4 {
+            font-size: 16px;
             font-weight: 600;
-            margin: 32px 0 16px;
-            color: #f3f4f6;
-        }
-        
-        h4 {
-            font-size: 18px;
-            font-weight: 600;
-            margin: 24px 0 12px;
+            margin: 20px 0 12px;
             color: #d1d5db;
         }
         
-        /* Cards */
-        .card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 16px;
-            padding: 24px;
+        /* Steps */
+        .step-list {
+            counter-reset: step;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .step-list li {
+            position: relative;
+            padding-left: 48px;
             margin-bottom: 20px;
-            transition: all 0.3s;
-        }
-        
-        .card:hover {
-            border-color: rgba(102,126,234,0.5);
-            transform: translateY(-2px);
-        }
-        
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-        }
-        
-        .card-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #fff;
-        }
-        
-        .badge {
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        
-        .badge-success { background: rgba(34,197,94,0.2); color: #22c55e; }
-        .badge-warning { background: rgba(234,179,8,0.2); color: #eab308; }
-        .badge-danger { background: rgba(239,68,68,0.2); color: #ef4444; }
-        .badge-info { background: rgba(59,130,246,0.2); color: #60a5fa; }
-        
-        /* Tables */
-        .table-wrapper {
-            overflow-x: auto;
-            margin: 24px 0;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 14px;
-        }
-        
-        th {
-            text-align: left;
-            padding: 16px;
-            background: rgba(255,255,255,0.05);
-            font-weight: 600;
-            color: #9ca3af;
-            text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 0.5px;
-        }
-        
-        td {
-            padding: 16px;
+            padding-bottom: 20px;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
         
-        tr:hover td {
-            background: rgba(255,255,255,0.02);
+        .step-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .step-list li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        
+        .step-title {
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        
+        .step-desc {
+            color: #9ca3af;
+            font-size: 14px;
         }
         
         /* Code blocks */
@@ -209,28 +250,80 @@
             position: relative;
             white-space: pre-wrap;
             word-wrap: break-word;
+            color: #e5e7eb;
         }
         
-        .code-block::before {
-            content: attr(data-label);
+        .copy-btn {
             position: absolute;
-            top: 0;
-            right: 0;
-            padding: 4px 12px;
-            background: rgba(102,126,234,0.2);
-            color: #667eea;
-            font-size: 11px;
-            border-bottom-left-radius: 8px;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            border-radius: 6px;
+            color: #9ca3af;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s;
         }
         
-        /* Lists */
-        ul, ol {
+        .copy-btn:hover {
+            background: rgba(102,126,234,0.3);
+            color: #fff;
+        }
+        
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
             margin: 16px 0;
-            padding-left: 24px;
         }
         
-        li {
-            margin-bottom: 8px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        
+        th {
+            text-align: left;
+            padding: 12px;
+            background: rgba(255,255,255,0.05);
+            font-weight: 600;
+            color: #9ca3af;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        /* Tips */
+        .tip {
+            padding: 16px;
+            border-radius: 12px;
+            margin: 16px 0;
+            display: flex;
+            gap: 12px;
+        }
+        
+        .tip-success {
+            background: rgba(34,197,94,0.1);
+            border: 1px solid rgba(34,197,94,0.3);
+            color: #22c55e;
+        }
+        
+        .tip-warning {
+            background: rgba(234,179,8,0.1);
+            border: 1px solid rgba(234,179,8,0.3);
+            color: #eab308;
+        }
+        
+        .tip-info {
+            background: rgba(59,130,246,0.1);
+            border: 1px solid rgba(59,130,246,0.3);
+            color: #60a5fa;
         }
         
         /* Checklist */
@@ -254,137 +347,6 @@
             font-size: 20px;
         }
         
-        .checklist li.checked::before {
-            content: '✅';
-        }
-        
-        /* Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin: 24px 0;
-        }
-        
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 32px;
-            padding-left: 24px;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -34px;
-            top: 4px;
-            width: 12px;
-            height: 12px;
-            background: #667eea;
-            border-radius: 50%;
-            border: 3px solid #0a0a0f;
-        }
-        
-        .timeline-day {
-            font-size: 14px;
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-        
-        /* Copy button */
-        .copy-btn {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            padding: 6px 12px;
-            background: rgba(255,255,255,0.1);
-            border: none;
-            border-radius: 6px;
-            color: #9ca3af;
-            cursor: pointer;
-            font-size: 12px;
-            transition: all 0.3s;
-        }
-        
-        .copy-btn:hover {
-            background: rgba(102,126,234,0.3);
-            color: #fff;
-        }
-        
-        /* Stats */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 32px 0;
-        }
-        
-        .stat-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            padding: 24px;
-            text-align: center;
-        }
-        
-        .stat-value {
-            font-size: 36px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .stat-label {
-            color: #9ca3af;
-            font-size: 14px;
-            margin-top: 8px;
-        }
-        
-        /* Alert */
-        .alert {
-            padding: 16px 20px;
-            border-radius: 12px;
-            margin: 24px 0;
-            display: flex;
-            align-items: start;
-            gap: 12px;
-        }
-        
-        .alert-warning {
-            background: rgba(234,179,8,0.1);
-            border: 1px solid rgba(234,179,8,0.3);
-            color: #eab308;
-        }
-        
-        .alert-danger {
-            background: rgba(239,68,68,0.1);
-            border: 1px solid rgba(239,68,68,0.3);
-            color: #ef4444;
-        }
-        
-        .alert-success {
-            background: rgba(34,197,94,0.1);
-            border: 1px solid rgba(34,197,94,0.3);
-            color: #22c55e;
-        }
-        
         /* Footer */
         .footer {
             text-align: center;
@@ -400,224 +362,228 @@
                 font-size: 32px;
             }
             
-            .nav {
-                gap: 4px;
-            }
-            
-            .nav a {
-                padding: 6px 12px;
-                font-size: 12px;
-            }
-            
-            h2 {
-                font-size: 24px;
+            .platforms-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
+    <!-- MAIN PAGE -->
+    <div id="main-page" class="container">
         <header class="header">
             <h1>TG STONE</h1>
-            <p>Полный комплект промо-материалов для размещения на маркетплейсах. Готовые тексты, требования, инструкции и автоматизация.</p>
+            <p>Полный план запуска на 11 площадках. Выберите площадку для подробного мануала по регистрации, ценам и запуску.</p>
         </header>
 
-        <!-- Navigation - обычная, не фиксированная -->
-        <nav class="nav">
-            <a href="#about">О проекте</a>
-            <a href="#services">Услуги</a>
-            <a href="#platforms">Площадки</a>
-            <a href="#texts">Тексты</a>
-            <a href="#docs">Документы</a>
-            <a href="#scripts">Скрипты</a>
-            <a href="#plan">План запуска</a>
-            <a href="#kpi">KPI</a>
-        </nav>
-
-        <!-- About -->
-        <section id="about">
-            <h2>О проекте</h2>
-            <div class="stats">
-                <div class="stat-card">
-                    <div class="stat-value">8</div>
-                    <div class="stat-label">Площадок для размещения</div>
+        <div class="platforms-grid">
+            <!-- PRIMARY -->
+            <a href="#" class="platform-card" onclick="showPage('salegroups')">
+                <div class="platform-header">
+                    <span class="platform-name">SaleGroups.ru</span>
+                    <span class="platform-status status-primary">ТОП-1</span>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-value">15+</div>
-                    <div class="stat-label">Готовых объявлений</div>
+                <div class="platform-desc">Самая быстрая площадка для старта. Первая продажа в день публикации. Низкая комиссия, высокий трафик.</div>
+                <div class="platform-stats">
+                    <span class="platform-stat">💰 7-15%</span>
+                    <span class="platform-stat">⚡️ 1 день</span>
+                    <span class="platform-stat">🎯 Высокая конверсия</span>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-value">25+</div>
-                    <div class="stat-label">Шаблонов ответов</div>
+            </a>
+
+            <a href="#" class="platform-card" onclick="showPage('kwork')">
+                <div class="platform-header">
+                    <span class="platform-name">Kwork.ru</span>
+                    <span class="platform-status status-primary">ТОП-2</span>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-value">4</div>
-                    <div class="stat-label">Недели до полного запуска</div>
+                <div class="platform-desc">Профессиональная биржа фриланса. Высокий чек, серьёзные клиенты. Жёсткая модерация, но стабильный поток.</div>
+                <div class="platform-stats">
+                    <span class="platform-stat">💰 20%</span>
+                    <span class="platform-stat">⏱️ 3-7 дней модерация</span>
+                    <span class="platform-stat">💎 Высокий чек</span>
                 </div>
-            </div>
+            </a>
 
-            <div class="alert alert-success">
-                <strong>💡 Цель:</strong> Создать многоканальную систему продаж через маркетплейсы с единым брендом TG STONE и автоматизированной поддержкой клиентов.
-            </div>
-        </section>
+            <!-- TESTED (djekxa) -->
+            <a href="#" class="platform-card" onclick="showPage('djekxa')">
+                <div class="platform-header">
+                    <span class="platform-name">Djekxa.ru</span>
+                    <span class="platform-status status-tested">Проверено</span>
+                </div>
+                <div class="platform-desc">✅ Уже работал! Были продажи, более-менее стабильно. Юрлицо ZAGRAN LTD (UK). Готовые чаты/каналы.</div>
+                <div class="platform-stats">
+                    <span class="platform-stat">💰 ?%</span>
+                    <span class="platform-stat">✅ Опыт есть</span>
+                    <span class="platform-stat">🇬🇧 UK юрлицо</span>
+                </div>
+            </a>
 
-        <!-- Services -->
-        <section id="services">
-            <h2>Ваши услуги</h2>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Услуга</th>
-                            <th>Цена</th>
-                            <th>Срок</th>
-                            <th>Особенности</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>🚀 Вывод в топ</strong><br>1K-100K ботов</td>
-                            <td>$12 - $800</td>
-                            <td>2-7 дней</td>
-                            <td>Органический трафик 3-7 дней</td>
-                        </tr>
-                        <tr>
-                            <td><strong>💬 Готовые чаты</strong><br>2020-2024 гг.</td>
-                            <td>$8 - $16/шт</td>
-                            <td>Моментально</td>
-                            <td>Супергруппы, полные права</td>
-                        </tr>
-                        <tr>
-                            <td><strong>📢 Каналы с историей</strong><br>2022-2024 гг.</td>
-                            <td>$3 - $5/шт</td>
-                            <td>Моментально</td>
-                            <td>С публикациями и датой</td>
-                        </tr>
-                        <tr>
-                            <td><strong>👥 Инвайтинг</strong><br>Живая аудитория</td>
-                            <td>$50 - $70/1000</td>
-                            <td>1-3 дня</td>
-                            <td>Парсинг включён</td>
-                        </tr>
-                        <tr>
-                            <td><strong>⭐ Telegram Звёзды</strong></td>
-                            <td>От $1.25</td>
-                            <td>15-60 мин</td>
-                            <td>50-5000 шт</td>
-                        </tr>
-                        <tr>
-                            <td><strong>🤖 Разработка ботов</strong></td>
-                            <td>От $100</td>
-                            <td>3-14 дней</td>
-                            <td>Магазины, CRM, автоматизация</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <!-- SECONDARY -->
+            <a href="#" class="platform-card" onclick="showPage('tradegroups')">
+                <div class="platform-header">
+                    <span class="platform-name">Trade-Groups.ru</span>
+                    <span class="platform-status status-secondary">B2B</span>
+                </div>
+                <div class="platform-desc">Бизнес-аудитория, агентства, оптовики. Трёхуровневая верификация, API-статистика.</div>
+                <div class="platform-stats">
+                    <span class="platform-stat">💰 5-10%</span>
+                    <span class="platform-stat">🏢 B2B фокус</span>
+                    <span class="platform-stat">🔒 Верификация</span>
+                </div>
+            </a>
 
-            <h3>Контакты для всех площадок</h3>
-            <div class="code-block" data-label="КОНТАКТЫ">Telegram-бот: @tgstonebot
-Поддержка: @tgstone_support
-Сайт: https://dochstone.github.io/sitezar/
-Реферальная программа: 10% с заказов приглашённых</div>
-        </section>
+            <a href="#" class="platform-card" onclick="showPage('sesale')">
+                <div class="platform-header">
+                    <span class="platform-name">SESale.me</span>
+                    <span class="platform-status status-secondary">Гарант</span>
+                </div>
+                <div class="platform-desc">Эскроу-сделки, телефонная поддержка. Максимальная безопасность для крупных сделок.</div>
+                <div class="platform-stats">
+                    <span class="platform-stat">💰 7-15%</span>
+                    <span class="platform-stat">🛡 Эскроу</span>
+                    <span class="platform-stat">📞 Поддержка</span>
+                </div>
+            </a>
 
-        <!-- Platforms -->
-        <section id="platforms">
-            <h2>Сравнение площадок</h2>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Площадка</th>
-                            <th>Комиссия</th>
-                            <th>Мин. цена</th>
-                            <th>Верификация</th>
-                            <th>Статус</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>SaleGroups.ru</strong></td>
-                            <td>7-15%</td>
-                            <td>Нет</td>
-                            <td>Простая</td>
-                            <td><span class="badge badge-success">Рекомендуется</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Kwork.ru</strong></td>
-                            <td>20%</td>
-                            <td>500₽</td>
-                            <td>Жёсткая</td>
-                            <td><span class="badge badge-success">Рекомендуется</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Trade-Groups.ru</strong></td>
-                            <td>5-10%</td>
-                            <td>Нет</td>
-                            <td>Средняя</td>
-                            <td><span class="badge badge-success">Рекомендуется</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>SESale.me</strong></td>
-                            <td>7-15%</td>
-                            <td>Нет</td>
-                            <td>Паспорт</td>
-                            <td><span class="badge badge-success">Рекомендуется</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>MadBid.com</strong></td>
-                            <td>12%</td>
-                            <td>Нет</td>
-                            <td>Средняя</td>
-                            <td><span class="badge badge-info">Опционально</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>OldChat.org</strong></td>
-                            <td>Договорная</td>
-                            <td>Нет</td>
-                            <td>Нет</td>
-                            <td><span class="badge badge-info">Специфика</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Dark.Shopping</strong></td>
-                            <td>5-10%</td>
-                            <td>Нет</td>
-                            <td>Нет</td>
-                            <td><span class="badge badge-warning">Рискованно</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Telderi.ru</strong></td>
-                            <td>10-15%</td>
-                            <td>Нет</td>
-                            <td>Паспорт</td>
-                            <td><span class="badge badge-warning">Требует подготовки</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>FunPay.com</strong></td>
-                            <td>3-15%</td>
-                            <td>Нет</td>
-                            <td>Телефон</td>
-                            <td><span class="badge badge-danger">Не рекомендуется</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <a href="#" class="platform-card" onclick="showPage('telderi')">
+                <div class="platform-header">
+                    <span class="platform-name">Telderi.ru</span>
+                    <span class="platform-status status-secondary">Лидер</span>
+                </div>
+                <div class="platform-desc">Старейшая биржа (с 2011). Только готовые каналы с аудиторией. Требует подготовки активов.</div>
+                <div class="platform-stats">
+                    <span class="platform-stat">💰 10-15%</span>
+                    <span class="platform-stat">📊 135K+ сделок</span>
+                    <span class="platform-stat">⚠️ Нужны каналы</span>
+                </div>
+            </a>
 
-            <div class="alert alert-danger">
-                <strong>⚠️ Важно:</strong> FunPay запрещает размещение на других площадках одновременно. Выбор: только FunPay или отказ.
-            </div>
-        </section>
+            <!-- OPTIONAL -->
+            <a href="#" class="platform-card" onclick="showPage('madbid')">
+                <div class="platform-header">
+                    <span class="platform-name">MadBid.com</span>
+                    <span class="platform-status status-optional">API</span>
+                </div>
+                <div class="platform-desc">Автоматизация, API-интеграция, антифрод. Для технологичных клиентов и агентств.</div>
+                <div class="platform-stats">
+                    <span class="platform-stat">💰 12%</span>
+                    <span class="platform-stat">🤖 Автоматизация</span>
+                    <span class="platform-stat">🔧 API</span>
+                </div>
+            </a>
 
-        <!-- Texts -->
-        <section id="texts">
-            <h2>Готовые тексты объявлений</h2>
+            <a href="#" class="platform-card" onclick="showPage('oldchat')">
+                <div class="platform-header">
+                    <span class="platform-name">OldChat.org</span>
+                    <span class="platform-status status-optional">Скупка</span>
+                </div>
+                <div class="platform-desc">Специфика: скупка и продажа старых чатов (до марта 2024). Высокие цены на винтаж.</div>
+                <div class="platform-stats">
+                    <span class="platform-stat">💰 Договорная</span>
+                    <span class="platform-stat">🏆 Винтаж</span>
+                    <span class="platform-stat">⚡️ Моментально</span>
+                </div>
+            </a>
 
-            <h3>SaleGroups.ru — 3 объявления</h3>
+            <a href="#" class="platform-card" onclick="showPage('mipped')">
+                <div class="platform-header">
+                    <span class="platform-name">Mipped.com</span>
+                    <span class="platform-status status-optional">Форум</span>
+                </div>
+                <div class="platform-desc">Форум/барахолка. Нет гаранта, но можно найти клиентов через активность. Требует времени.</div>
+                <div class="platform-stats">
+                    <span class="platform-stat">💰 Нет</span>
+                    <span class="platform-stat">⏱️ Ручной труд</span>
+                    <span class="platform-stat">⚠️ Риск</span>
+                </div>
+            </a>
+
+            <!-- RISK -->
+            <a href="#" class="platform-card" onclick="showPage('darkshopping')">
+                <div class="platform-header">
+                    <span class="platform-name">Dark.Shopping</span>
+                    <span class="platform-status status-risk">Тёмная</span>
+                </div>
+                <div class="platform-desc">Анонимная площадка. Низкие цены, но риск скама. Только для опытных, небольшие тесты.</div>
+                <div class="platform-stats">
+                    <span class="platform-stat">💰 5-10%</span>
+                    <span class="platform-stat">🥷 Анонимно</span>
+                    <span class="platform-stat">⚠️ Риск</span>
+                </div>
+            </a>
+
+            <a href="#" class="platform-card" onclick="showPage('funpay')">
+                <div class="platform-header">
+                    <span class="platform-name">FunPay.com</span>
+                    <span class="platform-status status-risk">Опасно</span>
+                </div>
+                <div class="platform-desc">❌ ЗАПРЕЩАЕТ размещение на других площадках! Выбор: только FunPay или отказ.</div>
+                <div class="platform-stats">
+                    <span class="platform-stat">💰 3-15%</span>
+                    <span class="platform-stat">🚫 Мультилистинг</span>
+                    <span class="platform-stat">❌ Не рекомендуется</span>
+                </div>
+            </a>
+        </div>
+
+        <footer class="footer">
+            <p><strong>TG STONE</strong> — Профессиональное продвижение в Telegram</p>
+            <p>Бот: @tgstonebot | Поддержка: @tgstone_support</p>
+        </footer>
+    </div>
+
+    <!-- ==================== SALEGROUPS.RU ==================== -->
+    <div id="salegroups" class="detail-page container">
+        <a href="#" class="back-btn" onclick="showPage('main')">← Назад к списку</a>
+        
+        <div class="header">
+            <h1>SaleGroups.ru</h1>
+            <p>Биржа Telegram-каналов №1 в РФ. Быстрый старт, низкая комиссия, высокий трафик.</p>
+        </div>
+
+        <div class="content-section">
+            <h3>📊 Информация о площадке</h3>
+            <table>
+                <tr><td><strong>Комиссия</strong></td><td>7-15%</td></tr>
+                <tr><td><strong>Минимальная цена</strong></td><td>Нет</td></tr>
+                <tr><td><strong>Верификация</strong></td><td>Простая (Telegram)</td></tr>
+                <tr><td><strong>Сроки вывода</strong></td><td>1-3 дня</td></tr>
+                <tr><td><strong>Аудитория</strong></td><td>SMM-щики, арбитражники, бизнес</td></tr>
+                <tr><td><strong>Формат</strong></td><td>Объявления как на Авито</td></tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h3>🚀 План запуска (День 1)</h3>
+            <ol class="step-list">
+                <li>
+                    <div class="step-title">Регистрация</div>
+                    <div class="step-desc">Перейти на salegroups.ru → Нажать "Добавить объявление" → Авторизоваться через @salegroupsbot</div>
+                </li>
+                <li>
+                    <div class="step-title">Заполнение профиля</div>
+                    <div class="step-desc">Название: TG STONE | Описание: продвижение Telegram | Контакты: @tgstone_support</div>
+                </li>
+                <li>
+                    <div class="step-title">Публикация 3 объявлений</div>
+                    <div class="step-desc">Вывод в топ, Готовые чаты, Комплексное продвижение (тексты ниже)</div>
+                </li>
+                <li>
+                    <div class="step-title">Активация</div>
+                    <div class="step-desc">Поднятие объявлений каждые 24 часа (бесплатно или за небольшую плату)</div>
+                </li>
+                <li>
+                    <div class="step-title">Первые продажи</div>
+                    <div class="step-desc">Отвечать на сообщения в течение 5-15 минут для высокой конверсии</div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="content-section">
+            <h3>📝 Готовые тексты объявлений</h3>
             
             <h4>Объявление 1: Вывод в топ</h4>
-            <div class="code-block" data-label="СКОПИРОВАТЬ">🚀 ВЫВОД БОТОВ В ТОП TELEGRAM
+            <div class="code-block">🚀 ВЫВОД БОТОВ В ТОП TELEGRAM
 
 Поднимаем вашего бота в топ-3 поиска Telegram
 
@@ -638,7 +604,7 @@
 📩 @tgstonebot | 💬 @tgstone_support</div>
 
             <h4>Объявление 2: Готовые чаты</h4>
-            <div class="code-block" data-label="СКОПИРОВАТЬ">💬 ГОТОВЫЕ ЧАТЫ С ОТЛЁЖКОЙ 2020-2024
+            <div class="code-block">💬 ГОТОВЫЕ ЧАТЫ С ОТЛЁЖКОЙ 2020-2024
 
 Живые аккаунты для инвайтинга и работы
 
@@ -658,7 +624,7 @@
 📩 @tgstonebot | 💬 @tgstone_support</div>
 
             <h4>Объявление 3: Комплекс</h4>
-            <div class="code-block" data-label="СКОПИРОВАТЬ">📦 КОМПЛЕКСНОЕ ПРОДВИЖЕНИЕ TELEGRAM
+            <div class="code-block">📦 КОМПЛЕКСНОЕ ПРОДВИЖЕНИЕ TELEGRAM
 
 Всё в одном месте:
 
@@ -675,11 +641,260 @@
 Работаем через гаранта площадки
 
 📩 @tgstonebot | 💬 @tgstone_support</div>
+        </div>
 
-            <h3>Kwork.ru — 3 кворка</h3>
+        <div class="content-section">
+            <h3>💡 Советы по работе</h3>
+            <div class="tip tip-success">
+                <strong>💰 Лайфхак:</strong> Поднимайте объявления утром (9-11 МСК) — пик активности целевой аудитории.
+            </div>
+            <div class="tip tip-warning">
+                <strong>⚠️ Важно:</strong> Отвечайте быстро! Конкуренция высокая, клиент уйдёт к другому через 30 минут ожидания.
+            </div>
+            <div class="tip tip-info">
+                <strong>📈 Масштаб:</strong> После 5 продаж запросите отзывы — это поднимет доверие и конверсию.
+            </div>
+        </div>
+    </div>
 
-            <h4>Кворк 1: Вывод в топ</h4>
-            <div class="code-block" data-label="СКОПИРОВАТЬ">🚀 Выведу бота в топ поиска Telegram
+    <!-- ==================== DJEKXA.RU ==================== -->
+    <div id="djekxa" class="detail-page container">
+        <a href="#" class="back-btn" onclick="showPage('main')">← Назад к списку</a>
+        
+        <div class="header">
+            <h1>Djekxa.ru</h1>
+            <p>✅ ПРОВЕРЕНО! Уже работал, были продажи. ZAGRAN LTD (UK). Готовые чаты/каналы.</p>
+        </div>
+
+        <div class="tip tip-success" style="margin-bottom: 24px;">
+            <strong>✅ Ваш опыт:</strong> Уже был магазин, продажи были более-менее стабильные. Можно восстановить или создать новый.
+        </div>
+
+        <div class="content-section">
+            <h3>📊 Информация о площадке</h3>
+            <table>
+                <tr><td><strong>Юридическое лицо</strong></td><td>ZAGRAN LTD, Company number 16334360</td></tr>
+                <tr><td><strong>Адрес</strong></td><td>82a James Carter Road, Mildenhall, UK</td></tr>
+                <tr><td><strong>Специализация</strong></td><td>Готовые чаты/каналы Telegram</td></tr>
+                <tr><td><strong>Комиссия</strong></td><td>Не указана (уточнить)</td></tr>
+                <tr><td><strong>Верификация</strong></td><td>Средняя (email, телефон)</td></tr>
+                <tr><td><strong>Статус</strong></td><td>✅ Проверено, были продажи</td></tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h3>🚀 План запуска</h3>
+            <ol class="step-list">
+                <li>
+                    <div class="step-title">Восстановление доступа</div>
+                    <div class="step-desc">Попробовать войти в старый аккаунт. Если не получится — зарегистрировать новый с тем же брендом TG STONE</div>
+                </li>
+                <li>
+                    <div class="step-title">Обновление каталога</div>
+                    <div class="step-desc">Актуализировать цены, добавить новые позиции (звёзды, вывод в топ, боты)</div>
+                </li>
+                <li>
+                    <div class="step-title">Публикация товаров</div>
+                    <div class="step-desc">Загрузить чаты/каналы с описанием, фото, ценами</div>
+                </li>
+                <li>
+                    <div class="step-title">Настройка автовыдачи</div>
+                    <div class="step-desc">Если есть API — интегрировать с @tgstonebot</div>
+                </li>
+                <li>
+                    <div class="step-title">Активация продаж</div>
+                    <div class="step-desc">Мониторить заказы, отвечать на вопросы, накапливать репутацию</div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="content-section">
+            <h3>📝 Текст для каталога</h3>
+            <div class="code-block">📦 TG STONE — Готовые чаты и каналы Telegram
+
+🏆 Прямой поставщик с 2020 года
+
+💬 ЧАТЫ С ОТЛЁЖКОЙ:
+• 2020 год — $16 (максимальный траст)
+• 2021 год — $14
+• 2022 год — $12
+• 2023 год — $10
+• 2024 год — $8
+
+📢 КАНАЛЫ С ИСТОРИЕЙ:
+• 2022 год — $5
+• 2023 год — $4
+• 2024 год — $3
+
+🚀 ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ:
+• Вывод в топ поиска — от $12
+• Инвайтинг живой аудитории — $50-70/1000
+• Telegram Звёзды — от $1.25
+• Разработка ботов — от $100
+
+✅ Полная передача прав
+✅ Гарантия качества
+✅ Оплата: USDT, CryptoBot
+
+Юрлицо: ZAGRAN LTD (UK)
+Регистрация: 16334360
+
+📩 @tgstonebot | 💬 @tgstone_support</div>
+        </div>
+
+        <div class="content-section">
+            <h3>💡 Преимущества площадки</h3>
+            <ul>
+                <li>✅ Уже знакомая система (был опыт)</li>
+                <li>✅ UK юридическое лицо — доверие европейских клиентов</li>
+                <li>✅ Специализация на Telegram — целевая аудитория</li>
+                <li>✅ Меньше конкуренции чем на крупных биржах</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ==================== MIPPED.COM ==================== -->
+    <div id="mipped" class="detail-page container">
+        <a href="#" class="back-btn" onclick="showPage('main')">← Назад к списку</a>
+        
+        <div class="header">
+            <h1>Mipped.com</h1>
+            <p>Форум/барахолка. Нет гаранта, но можно найти клиентов через активность.</p>
+        </div>
+
+        <div class="tip tip-warning" style="margin-bottom: 24px;">
+            <strong>⚠️ Внимание:</strong> Это форум, не профессиональная биржа. Нет системы гаранта, высокий риск. Только для опытных.
+        </div>
+
+        <div class="content-section">
+            <h3>📊 Информация о площадке</h3>
+            <table>
+                <tr><td><strong>Тип</strong></td><td>Форум / Барахолка</td></tr>
+                <tr><td><strong>Раздел</strong></td><td>Аккаунты, софт, услуги</td></tr>
+                <tr><td><strong>Комиссия</strong></td><td>Нет</td></tr>
+                <tr><td><strong>Гарант</strong></td><td>❌ Нет</td></tr>
+                <tr><td><strong>Модерация</strong></td><td>Слабая</td></tr>
+                <tr><td><strong>Риск</strong></td><td>Высокий (много скама)</td></tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h3>🚀 План запуска (неделя 3-4)</h3>
+            <ol class="step-list">
+                <li>
+                    <div class="step-title">Регистрация</div>
+                    <div class="step-desc">Создать аккаунт, заполнить профиль, добавить контакты (@tgstone_support)</div>
+                </li>
+                <li>
+                    <div class="step-title">Изучение правил</div>
+                    <div class="step-desc">Прочитать правила раздела "Аккаунты и услуги", узнать ограничения</div>
+                </li>
+                <li>
+                    <div class="step-title">Создание темы</div>
+                    <div class="step-desc">Оформить ветку с предложениями, ценами, контактами (шаблон ниже)</div>
+                </li>
+                <li>
+                    <div class="step-title">Активность</div>
+                    <div class="step-desc">Поднимать тему (апать) каждые 24 часа, отвечать в соседних ветках</div>
+                </li>
+                <li>
+                    <div class="step-title">Работа с рисками</div>
+                    <div class="step-desc">Только предоплата 100% или работа через гаранта-перекупа. Не давать товар в долг!</div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="content-section">
+            <h3>📝 Шаблон темы на форуме</h3>
+            <div class="code-block">[PRO] TG STONE — Telegram продвижение | Вывод в топ | Чаты | Инвайтинг
+
+🔥 ОПЫТ 4+ ГОДА | 1000+ ВЫПОЛНЕННЫХ ЗАКАЗОВ
+
+💰 ПРАЙС:
+• Вывод бота в топ — от $12 (1K-100K запросов)
+• Готовые чаты 2020-2024 — от $8/шт
+• Инвайтинг живых — $50-70/1000
+• Telegram Звёзды — от $1.25
+• Разработка ботов — от $100
+
+⚡️ СРОКИ: от 3 часов
+🛡 ГАРАНТИЯ: Результат или возврат
+
+💳 ОПЛАТА: USDT (TRC20/TON/BEP20), CryptoBot
+📞 КОНТАКТЫ: @tgstone_support | Бот: @tgstonebot
+
+🏆 ПОЧЕМУ Я:
+• Проверенные площадки (SaleGroups, Kwork, etc)
+• Регулярные отзывы
+• Техподдержка 24/7
+• Скидки постоянным
+
+❗️ РАБОТАЮ ТОЛЬКО ПО 100% ПРЕДОПЛАТЕ ИЛИ ЧЕРЕЗ ГАРАНТА
+
+Отзывы в профиле и на внешних биржах.</div>
+        </div>
+
+        <div class="content-section">
+            <h3>⚠️ Правила безопасности</h3>
+            <div class="tip tip-danger">
+                <strong>🚫 Никогда:</strong> Не работать в долг, не передавать товар до оплаты, не верить "проверенным" посредникам без проверки.
+            </div>
+            <div class="tip tip-success">
+                <strong>✅ Всегда:</strong> Предоплата 100%, или гарант с репутацией (проверить историю!), или работа через вашего бота @tgstonebot с балансом.
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== KWORK.RU ==================== -->
+    <div id="kwork" class="detail-page container">
+        <a href="#" class="back-btn" onclick="showPage('main')">← Назад к списку</a>
+        
+        <div class="header">
+            <h1>Kwork.ru</h1>
+            <p>Профессиональная биржа фриланса. Высокий чек, серьёзные клиенты, жёсткая модерация.</p>
+        </div>
+
+        <div class="content-section">
+            <h3>📊 Информация о площадке</h3>
+            <table>
+                <tr><td><strong>Комиссия</strong></td><td>20%</td></tr>
+                <tr><td><strong>Минимальная цена</strong></td><td>500₽ (~$5.5)</td></tr>
+                <tr><td><strong>Модерация</strong></td><td>Жёсткая (проверяет каждый кворк)</td></tr>
+                <tr><td><strong>Срок модерации</strong></td><td>1-3 дня</td></tr>
+                <tr><td><strong>Вывод средств</strong></td><td>3-7 дней</td></tr>
+                <tr><td><strong>Аудитория</strong></td><td>Бизнес, заказчики с бюджетом</td></tr>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h3>🚀 План запуска (День 4-7)</h3>
+            <ol class="step-list">
+                <li>
+                    <div class="step-title">Регистрация</div>
+                    <div class="step-desc">Email + телефон. Заполнить профиль: фото, описание, навыки "Telegram, SMM, боты"</div>
+                </li>
+                <li>
+                    <div class="step-title">Создание первого кворка</div>
+                    <div class="step-desc">Начать с "Вывода в топ" — самая понятная услуга. Цена: 1500₽ базовый</div>
+                </li>
+                <li>
+                    <div class="step-title">Ожидание модерации</div>
+                    <div class="step-desc">1-3 дня. Если отклонят — исправить замечания и отправить повторно</div>
+                </li>
+                <li>
+                    <div class="step-title">Добавление кворков</div>
+                    <div class="step-desc">После одобрения первого — добавить "Разработка ботов" и "Инвайтинг"</div>
+                </li>
+                <li>
+                    <div class="step-title">Работа с заказами</div>
+                    <div class="step-desc">Высокое качество = хорошие отзывы = больше заказов. Первые 10 заказов критичны!</div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="content-section">
+            <h3>📝 Кворк 1: Вывод в топ</h3>
+            <div class="code-block">🚀 Выведу бота в топ поиска Telegram
 
 Что входит:
 • Анализ ниши и конкурентов
@@ -702,7 +917,7 @@
 Опыт: 500+ выполненных заказов</div>
 
             <h4>Кворк 2: Разработка бота</h4>
-            <div class="code-block" data-label="СКОПИРОВАТЬ">🤖 Создам Telegram-бота под ключ
+            <div class="code-block">🤖 Создам Telegram-бота под ключ
 
 Возможности:
 • Магазин с каталогом и корзиной
@@ -725,7 +940,7 @@
 Портфолио в профиле</div>
 
             <h4>Кворк 3: Инвайтинг</h4>
-            <div class="code-block" data-label="СКОПИРОВАТЬ">👥 Наберу живую аудиторию в Telegram-канал
+            <div class="code-block">👥 Наберу живую аудиторию в Telegram-канал
 
 Что делаю:
 • Парсинг целевых чатов вашей ниши
@@ -744,311 +959,49 @@
 
 Нужен доступ к каналу или чату
 Срок: 1-3 дня</div>
+        </div>
 
-            <h3>Остальные площадки</h3>
-
-            <div class="grid">
-                <div class="card">
-                    <div class="card-header">
-                        <span class="card-title">Trade-Groups.ru</span>
-                        <span class="badge badge-info">B2B</span>
-                    </div>
-                    <p>💼 B2B-ПРОДВИЖЕНИЕ TELEGRAM ДЛЯ БИЗНЕСА</p>
-                    <p>Для маркетинговых агентств и владельцев бизнеса...</p>
-                    <p><strong>Контакты:</strong> @tgstone_support</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <span class="card-title">SESale.me</span>
-                        <span class="badge badge-success">Гарант</span>
-                    </div>
-                    <p>🛡 ГАРАНТИРОВАННЫЕ СДЕЛКИ В TELEGRAM</p>
-                    <p>Работаем через эскроу SESale...</p>
-                    <p><strong>Контакты:</strong> @tgstone_support</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <span class="card-title">MadBid.com</span>
-                        <span class="badge badge-info">API</span>
-                    </div>
-                    <p>🤖 АВТОМАТИЗИРОВАННОЕ ПРОДВИЖЕНИЕ</p>
-                    <p>API-решения для агентств...</p>
-                    <p><strong>Контакты:</strong> @tgstone_support</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <span class="card-title">OldChat.org</span>
-                        <span class="badge badge-warning">Скупка</span>
-                    </div>
-                    <p>🏆 СТАРЫЕ TELEGRAM-ЧАТЫ 2020-2024</p>
-                    <p>Продаём чаты с максимальным трастом...</p>
-                    <p><strong>Контакты:</strong> @tgstone_support</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Documents -->
-        <section id="docs">
-            <h2>Чек-лист документов</h2>
-
-            <h3>Общие документы</h3>
-            <ul class="checklist">
-                <li>Паспорт (фото/скан)</li>
-                <li>Селфи с паспортом</li>
-                <li>Email (отдельный для бизнеса)</li>
-                <li>Номер телефона (отдельный)</li>
-                <li>Логотип TG STONE (512×512)</li>
-                <li>Аватарка продавца</li>
-            </ul>
-
-            <h3>Специфические требования</h3>
-            <div class="grid">
-                <div class="card">
-                    <h4>Telderi.ru</h4>
-                    <ul>
-                        <li>Скриншоты каналов (подписчики, статистика)</li>
-                        <li>Документы подтверждения владения</li>
-                        <li>Каналы с 1000+ подписчиков</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h4>Kwork.ru</h4>
-                    <ul>
-                        <li>Портфолио (скриншоты работ)</li>
-                        <li>Видео-приветствие (желательно)</li>
-                        <li>Примеры ботов/каналов</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h4>Trade-Groups.ru</h4>
-                    <ul>
-                        <li>Telegram-аккаунт старше 6 месяцев</li>
-                        <li>Примеры чатов/каналов</li>
-                    </ul>
-                </div>
-            </div>
-
-            <h3>Данные для заполнения</h3>
-            <div class="code-block" data-label="ШАБЛОН">Название: TG STONE
-
-Краткое описание:
-Продвижение Telegram: топ выдачи, чаты, инвайтинг, боты
-
-Полное описание:
-TG STONE — профессиональное продвижение в Telegram с 2020 года.
-
-Основные услуги:
-• Вывод ботов и каналов в топ поиска (1K-100K запросов)
-• Продажа готовых чатов и каналов с отлёжкой (2020-2024)
-• Живой инвайтинг целевой аудитории
-• Продажа Telegram Звёзд
-• Разработка Telegram-ботов под ключ
-
-Преимущества:
-⚡️ Сроки от 3 часов
-🛡 Гарантия результата или полный возврат
-💰 Прозрачные цены, скидки до 17%
-👥 1000+ выполненных заказов
-
-Способы оплаты:
-• USDT TRC-20
-• USDT TON
-• USDT BEP-20
-• CryptoBot
-• Баланс бота TG STONE</div>
-        </section>
-
-        <!-- Scripts -->
-        <section id="scripts">
-            <h2>Шаблоны ответов клиентам</h2>
-
-            <h3>Быстрые ответы</h3>
-            <div class="grid">
-                <div class="card">
-                    <h4>Как купить?</h4>
-                    <p>Здравствуйте! 🚀 Оформить заказ можно: 1️⃣ Через бота @tgstonebot — быстро и автоматически 2️⃣ Напрямую у меня — для крупных заказов и скидок. Что вас интересует?</p>
-                </div>
-                <div class="card">
-                    <h4>Гарантии?</h4>
-                    <p>Конечно! 🛡 Гарантия результата — если не выполним, вернём 100%. Работаем через гаранта площадки. 500+ успешных сделок!</p>
-                </div>
-                <div class="card">
-                    <h4>Сроки?</h4>
-                    <p>⏱ Звёзды — 15-60 мин, чаты — сразу, вывод в топ — 2-7 дней, инвайтинг — 1-3 дня, боты — 3-14 дней. Есть срочный режим (+30%)!</p>
-                </div>
-                <div class="card">
-                    <h4>Скидка?</h4>
-                    <p>🎁 От 3 услуг — 10%, от 5 — 15%, от 10 — 17%. Рефералка — 10% с друзей навсегда. Какой объём планируете?</p>
-                </div>
-            </div>
-
-            <h3>Автоответы (ключевые слова)</h3>
-            <div class="code-block" data-label="PYTHON">KEYWORDS_RESPONSES = {
-    "привет": "Привет! 👋 Готов помочь с продвижением в Telegram. Что интересует?",
-    "цена": "💰 Наш прайс:\n• Вывод в топ: $12-800\n• Чаты: $8-16/шт\n• Инвайтинг: $50-70/1000\n• Звёзды: от $1.25\n• Боты: от $100\n\nПодробнее: @tgstonebot",
-    "гарантия": "🛡 Гарантия результата или полный возврат. Работаем через гаранта площадки. 500+ успешных сделок!",
-    "срок": "⏱ Звёзды — 15-60 мин, чаты — сразу, вывод в топ — 2-7 дней, инвайтинг — 1-3 дня, боты — 3-14 дней",
-    "оплата": "💳 USDT (TRC20/TON/BEP20), CryptoBot, баланс бота. Какой способ удобнее?",
-    "скидка": "🎁 От 3 услуг — 10%, от 5 — 15%, от 10 — 17%. Рефералка — 10% с друзей навсегда!",
-    "default": "🤔 Уточните вопрос! Или воспользуйтесь ботом @tgstonebot — там есть вся информация."
-}</div>
-
-            <h3>Обработка возражений</h3>
-            <div class="card">
-                <h4>Дорого</h4>
-                <p>Согласен, цена важна! 📊 Давайте посчитаем: при выводе в топ на 10K запросов ($110) вы получаете 500-2000 переходов. Стоимость перехода $0.05-0.20. В Яндекс Директе аналог стоил бы $500-2000. Это инвестиция, окупающаяся за 1-2 продажи. Готов предложить пилот со скидкой 20%? 🤝</p>
-            </div>
-            <div class="card">
-                <h4>Мошенники?</h4>
-                <p>😊 Понимаю осторожность! Проверьте отзывы на площадке или начните с тестового заказа на $5-10. Работаем честно 4+ года. Репутация дороже!</p>
-            </div>
-            <div class="card">
-                <h4>Тест?</h4>
-                <p>Хорошая идея! 🎯 Варианты: 1️⃣ Мини-тест — 100 запросов ($5) 2️⃣ Тестовый чат — 1 шт ($8) 3️⃣ Пробный инвайт — 100 человек ($7). После теста решите о продолжении!</p>
-            </div>
-        </section>
-
-        <!-- Plan -->
-        <section id="plan">
-            <h2>План запуска</h2>
-
-            <h3>Неделя 1: Быстрый старт</h3>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-day">День 1</div>
-                    <p>Регистрация на <strong>SaleGroups.ru</strong> → 3 объявления в эфире</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-day">День 2</div>
-                    <p>Регистрация на <strong>OldChat.org</strong> → Объявление о продаже чатов</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-day">День 3</div>
-                    <p>Регистрация на <strong>Dark.Shopping</strong> → Короткое объявление</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-day">День 4</div>
-                    <p>Создание кворка на <strong>Kwork.ru</strong> → 1 кворк на модерации</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-day">День 5</div>
-                    <p>Доработка <strong>@tgstonebot</strong> → Автоответы работают</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-day">День 6-7</div>
-                    <p>Обработка первых заявок → <strong>Первые продажи!</strong></p>
-                </div>
-            </div>
-
-            <h3>Неделя 2: Расширение</h3>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-day">День 8</div>
-                    <p><strong>Trade-Groups.ru</strong> → B2B объявление</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-day">День 9</div>
-                    <p><strong>SESale.me</strong> → Объявление с гарантом</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-day">День 10</div>
-                    <p><strong>MadBid.com</strong> → Технологичное объявление</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-day">День 11-12</div>
-                    <p>Добавление кворков на <strong>Kwork.ru</strong> → 3 кворка в работе</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-day">День 13-14</div>
-                    <p>Сбор отзывов → Социальное доказательство</p>
-                </div>
-            </div>
-
-            <h3>Неделя 3-4: Оптимизация</h3>
-            <ul>
-                <li>Анализ конверсии с каждой площадки</li>
-                <li>Увеличение бюджета на эффективные каналы</li>
-                <li>Создание каналов для Telderi.ru</li>
-                <li>Настройка рекламы (если бюджет позволяет)</li>
-            </ul>
-        </section>
-
-        <!-- KPI -->
-        <section id="kpi">
-            <h2>Целевые показатели (KPI)</h2>
-
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Метрика</th>
-                            <th>1 месяц</th>
-                            <th>3 месяца</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Заявки с площадок</td>
-                            <td>50</td>
-                            <td>200</td>
-                        </tr>
-                        <tr>
-                            <td>Конверсия в продажу</td>
-                            <td>20%</td>
-                            <td>25%</td>
-                        </tr>
-                        <tr>
-                            <td>Средний чек</td>
-                            <td>$50</td>
-                            <td>$70</td>
-                        </tr>
-                        <tr>
-                            <td>Выручка</td>
-                            <td>$500</td>
-                            <td>$3,500</td>
-                        </tr>
-                        <tr>
-                            <td>Постоянные клиенты</td>
-                            <td>5</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>Отзывы на площадках</td>
-                            <td>10</td>
-                            <td>50</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="alert alert-success">
-                <strong>💡 Совет:</strong> Начните с SaleGroups.ru — это самая быстрая площадка для старта. Первая продажа возможна уже в первый день после публикации.
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p><strong>TG STONE</strong> — Профессиональное продвижение в Telegram</p>
-            <p>Бот: @tgstonebot | Поддержка: @tgstone_support</p>
-            <p style="margin-top: 20px; font-size: 14px;">Документ подготовлен для многоканального запуска продаж</p>
-        </footer>
+        <div class="tip tip-warning">
+            <strong>⚠️ Важно:</strong> На Kwork запрещено указывать внешние контакты в описании. Только в личных сообщениях после начала заказа!
+        </div>
     </div>
 
+    <!-- ==================== OTHER PAGES TEMPLATE ==================== -->
+    <!-- Добавить аналогичные страницы для: tradegroups, sesale, telderi, madbid, oldchat, darkshopping, funpay -->
+
     <script>
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.detail-page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById('main-page').style.display = 'none';
+            
+            // Show selected page
+            if (pageId === 'main') {
+                document.getElementById('main-page').style.display = 'block';
+                window.scrollTo(0, 0);
+            } else {
+                const page = document.getElementById(pageId);
+                if (page) {
+                    page.classList.add('active');
+                    window.scrollTo(0, 0);
+                } else {
+                    // Если страница еще не создана, показать заглушку
+                    alert('Страница для ' + pageId + ' в разработке. Используйте тексты из общего раздела.');
+                    document.getElementById('main-page').style.display = 'block';
+                }
+            }
+        }
+
         // Copy functionality
-        document.querySelectorAll('.code-block').forEach(block => {
-            const btn = document.createElement('button');
-            btn.className = 'copy-btn';
-            btn.textContent = 'Копировать';
-            btn.onclick = () => {
-                navigator.clipboard.writeText(block.innerText.replace('Копировать', '').trim());
-                btn.textContent = 'Скопировано!';
-                setTimeout(() => btn.textContent = 'Копировать', 2000);
-            };
-            block.appendChild(btn);
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('copy-btn')) {
+                const codeBlock = e.target.parentElement;
+                navigator.clipboard.writeText(codeBlock.innerText.replace('Копировать', '').trim());
+                e.target.textContent = 'Скопировано!';
+                setTimeout(() => e.target.textContent = 'Копировать', 2000);
+            }
         });
     </script>
 </body>
